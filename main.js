@@ -45,7 +45,7 @@ function calculateTip(mytip){
             removeThrowMsg(); 
         } 
     }else{
-        if(theAmount == 0){
+        if(theAmount == 0 || theAmount == ""){
             if (!valid__amount){
                 throwErrorAmount()
             }
