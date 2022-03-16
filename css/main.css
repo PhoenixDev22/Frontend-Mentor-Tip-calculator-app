@@ -216,6 +216,7 @@ main{
     }
     main{
         justify-content: center;
+        padding: 0;
     }
     .tip__calculator-box{
         width: 100%;
