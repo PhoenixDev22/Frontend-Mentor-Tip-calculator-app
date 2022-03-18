@@ -38,7 +38,7 @@ button{
 }
 
 input:focus{
-    outline: .3em dotted var(--Very-dark-cyan);
+    outline: .12em solid var(--Strong-cyan);
 }
 /* Start styling the body */
 body{
@@ -54,10 +54,10 @@ main{
     justify-content: flex-start;
     flex-direction: column;
     min-height: 100vh;
-    padding: 4rem 0 0;
+    /* padding: 4rem 0 0; */
 }
 .logo{
-    margin-bottom: 3rem;
+    margin-bottom: 5.3125rem;
 }
 .tip__calculator-box{
     background-color: var(--White);
@@ -181,7 +181,8 @@ main{
 }
 .description > span{
     display: block;
-    color: var( --Dark-grayish-cyan)
+    color: var( --Dark-grayish-cyan);
+    margin-top: 0.68rem;
 }
 .error__msg{
     font-size: 0.6rem;
@@ -210,45 +211,58 @@ main{
 .col{
     width: 100%;
 }
-@media (min-width: 740px){
+@media (min-width: 46.25em){
     body{
         padding: 0 1.5rem
     }
     main{
         justify-content: center;
-        padding: 0;
     }
     .tip__calculator-box{
         width: 100%;
         max-width:920px;
         border-radius: 1.5rem;
-        /* align-items: center; */
+        padding: 1.875rem;
         justify-content: space-between;
         flex-direction: row
     }
     .col{
-        width: 48%
+        width: 48%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
     }
     .display__results{
         width: 48%;
         margin: 0;
         padding: 4rem 2rem 2rem;
     }
-    .input {
-        margin-bottom: 0;
-    }
-    .sub__title{
-        margin: 0.95rem 0
-    }
-    .btn{
-        padding: 0.5rem
-    }
     .title{
+        margin-top: 1rem;
         font-size: 1.1rem;
     }
+    .input {
+        margin-bottom: 0rem;
+        padding: 0.7rem;
+    }
+    .input-1{
+        margin-bottom: 1.25rem;
+    }
     .sub__title{
+        margin: 1rem 0 ;
         font-size:1rem;
         word-spacing: normal;
+    }
+    .buttons{
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-bottom: 1rem;
+    }
+    .btn{
+        padding: 0.7rem
+    }
+    .result{
+        margin-bottom: 3.75rem;
     }
     .description{
         font-size: 1.1rem;
@@ -257,9 +271,10 @@ main{
         font-size: 0.8rem;
     }
     .tip__amount{
-        font-size: 36px;
+        font-size: 2.25rem;
     }
     .reset{
-        margin-top: 9rem
+        margin-top: 3.4rem;
+        padding: 0.7rem;
     }
 }
