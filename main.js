@@ -65,7 +65,7 @@ function calculateTip(mytip){
 function throwErrorAmount(){
     let msgSpan = document.createElement("span");
     let elementTitle = document.getElementById("title");
-    let msgText = document.createTextNode("Bill can't be zero or less");
+    let msgText = document.createTextNode("Bill can't be zero ");
     msgSpan.setAttribute("class", "error__msg");
     msgSpan.id = "valid__msg";
     msgSpan.appendChild(msgText);
@@ -86,7 +86,7 @@ function getTheValues(ele){
 // throw message when the number of people is zero or empty (create a span and append it)
 function throwError(){
     let msgSpan = document.createElement("span");
-    let msgText = document.createTextNode("Number can't be zero or less");
+    let msgText = document.createTextNode("Can't be zero ");
     let element = document.getElementById("label__msg");
     msgSpan.setAttribute("class", "error__msg");
     msgSpan.id = "error-msg";
