@@ -35,7 +35,7 @@ myListOfBtns.forEach(btn => {
 function calculateTip(mytip){
     let theAmount = parseInt(getTheValues(theAmountOfMmoney));
     let thenumpeople = getTheValues(theNumberOfPeople);
-    if( thenumpeople != "" && thenumpeople != 0 && theAmount !== 0 && theAmount != "" ){
+    if( thenumpeople != "" && thenumpeople != 0 && theAmount != 0 && theAmount != ""){
         let thenumberpeople = parseInt(thenumpeople);
         let thetipamount = ((theAmount * mytip) / thenumberpeople).toFixed(2) ;
         tipAmountPerPerson.innerHTML = `$ ${thetipamount}`;
@@ -52,7 +52,7 @@ function calculateTip(mytip){
         }else{
             removeThrowMsg(); 
         }
-        if(thenumpeople == 0 || thenumpeople == 0  ){
+        if(thenumpeople == 0 || thenumpeople == ""){
             if( !valid__num  ){
                 throwError();
             }
@@ -70,7 +70,21 @@ function throwErrorAmount(){
     msgSpan.id = "valid__msg";
     msgSpan.appendChild(msgText);
     elementTitle.appendChild(msgSpan);
+    theAmountOfMmoney.classList.add("red-border");
     valid__amount = true;
+}
+
+// throw message when the number of people is zero or empty (create a span and append it)
+function throwError(){
+    let msgSpan = document.createElement("span");
+    let msgText = document.createTextNode("Can't be zero ");
+    let element = document.getElementById("label__msg");
+    msgSpan.setAttribute("class", "error__msg");
+    msgSpan.id = "error-msg";
+    msgSpan.appendChild(msgText);
+    element.appendChild(msgSpan);
+    theNumberOfPeople.classList.add("red-border");
+    valid__num = true;
 }
 // fuction to remove the active class from the buttons
 function removeTheActiveClass(){
@@ -83,17 +97,7 @@ function getTheValues(ele){
     return ele.value;  
 }
 
-// throw message when the number of people is zero or empty (create a span and append it)
-function throwError(){
-    let msgSpan = document.createElement("span");
-    let msgText = document.createTextNode("Can't be zero ");
-    let element = document.getElementById("label__msg");
-    msgSpan.setAttribute("class", "error__msg");
-    msgSpan.id = "error-msg";
-    msgSpan.appendChild(msgText);
-    element.appendChild(msgSpan);
-    valid__num = true;
-}
+
 // remove the thrown message when unvalid values
 function removeThrowMsg(){
     let myMsg = document.getElementById("error-msg");
@@ -101,10 +105,12 @@ function removeThrowMsg(){
     if(myMsg ){
         myMsg.remove();
         valid__num = false;
+        theNumberOfPeople.classList.remove("red-border");
     }
     if(myMessage ){
         myMessage.remove();
-        valid__amount = false
+        valid__amount = false;
+        theAmountOfMmoney.classList.remove("red-border");
     }
 }
 
@@ -120,8 +126,10 @@ resetBtn.addEventListener("click", function(){
 // clear the value on the focus on the amount of money input 
 theAmountOfMmoney.onfocus = function(){
     theAmountOfMmoney.value = "";
+    removeThrowMsg();
 }
 // clear the value on the focus on the number of people
 theNumberOfPeople.onfocus = function(){
     theNumberOfPeople.value = "";
+    removeThrowMsg();
 }
