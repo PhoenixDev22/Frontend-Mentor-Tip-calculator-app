@@ -91,6 +91,7 @@ main{
     border: none;
     color: var(--Very-dark-cyan);
     margin-bottom: 2rem;
+    border: .15em solid transparent;
     position: relative;
     cursor: pointer;
 }
@@ -98,7 +99,7 @@ main{
 .before::before{
     content: url(../images/icon-dollar.svg);
     position: absolute;
-    top: calc(100% + 1.4rem);
+    top: calc(100% + 1.7rem);
     left: 0.5rem;
     transform: translateY(6px);
     z-index: 5;
@@ -119,7 +120,7 @@ main{
 .before-1::before{
     content: url(../images/icon-person.svg);
     position: absolute;
-    top: calc(100% + 1.4rem);
+    top: calc(100% + 1.7rem);
     transform: translateY(6px);
     left: 0.5rem;
     z-index: 5;
@@ -210,6 +211,15 @@ main{
 }
 .col{
     width: 100%;
+}
+.red-border{
+    border: .15em solid #f00;
+}
+footer{
+    width: 100%;
+    font-size: .875rem;
+    text-align: center;
+    padding: 1rem 0;
 }
 @media (min-width: 46.25em){
     body{
