@@ -49,12 +49,14 @@ body{
     width: 100%;
 }
 main{
+    min-height: 100vh;
+    padding: 160px 0 0;
+}
+.container{
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    min-height: 100vh;
-    /* padding: 4rem 0 0; */
 }
 .logo{
     margin-bottom: 5.3125rem;
@@ -225,9 +227,9 @@ footer{
     body{
         padding: 0 1.5rem
     }
-    main{
+    /* main{
         justify-content: center;
-    }
+    } */
     .tip__calculator-box{
         width: 100%;
         max-width:920px;
@@ -259,8 +261,8 @@ footer{
         margin-bottom: 1.25rem;
     }
     .sub__title{
-        margin: 1rem 0 ;
-        font-size:1rem;
+        margin: 1rem 0;
+        font-size: 1rem;
         word-spacing: normal;
     }
     .buttons{
