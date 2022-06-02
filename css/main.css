@@ -86,7 +86,7 @@ main{
     width: 100%;
     text-align: right;
     border-radius: 0.5rem;
-    padding: .5rem;
+    padding: .4rem;
     font-size: 20px;
     font-family: var(--font-family) ;
     background-color: var(--Very-light-grayish-cyan);
@@ -152,7 +152,6 @@ main{
 .custom{
     text-align: center;
     margin-bottom: 0;
-    padding: .4rem 
 }
 .btn.active{
     background-color: var(--Strong-cyan);
