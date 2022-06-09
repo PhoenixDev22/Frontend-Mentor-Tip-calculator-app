@@ -86,7 +86,7 @@ main{
     width: 100%;
     text-align: right;
     border-radius: 0.5rem;
-    padding: .5rem;
+    padding: .3rem;
     font-size: 20px;
     font-family: var(--font-family) ;
     background-color: var(--Very-light-grayish-cyan);
